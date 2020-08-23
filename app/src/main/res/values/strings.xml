@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">WolframAlphaClient</string>
+    <string name="enter_expression_here">Enter expression here</string>
+    <string name="search">Search</string>
+    <string name="enter_expression">Please enter expression!</string>
+    <string name="invalid_request">Invalid request. Try again!</string>
+</resources>
