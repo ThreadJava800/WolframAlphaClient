@@ -1,0 +1,107 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<queryresult success='true'
+    error='false'
+    numpods='4'
+    datatypes=''
+    timedout=''
+    timedoutpods=''
+    timing='0.683'
+    parsetiming='0.197'
+    parsetimedout='false'
+    recalculate=''
+    id='MSP129313342a8e712167df0000377bh184g5i0bd33'
+    host='https://www4d.wolframalpha.com'
+    server='24'
+    related='https://www4d.wolframalpha.com/api/v1/relatedQueries.jsp?id=MSPa129413342a8e712167df00005bh47bi1cc68ah2b8136841313943812560'
+    version='2.6'>
+ <pod title='Input'
+     scanner='Identity'
+     id='Input'
+     position='100'
+     error='false'
+     numsubpods='1'>
+  <subpod title=''>
+   <img src='https://www4d.wolframalpha.com/Calculate/MSP/MSP129513342a8e712167df00002a9h4e0h6a1dgde0?MSPStoreType=image/gif&amp;s=24'
+       alt='x - 3 = 0'
+       title='x - 3 = 0'
+       width='61'
+       height='19'
+       type='Default'
+       themes='1,2,3,4,5,6,7,8,9,10,11,12'
+       colorinvertable='true' />
+   <plaintext>x - 3 = 0</plaintext>
+  </subpod>
+  <expressiontypes count='1'>
+   <expressiontype name='Default' />
+  </expressiontypes>
+ </pod>
+ <pod title='Root plot'
+     scanner='Reduce'
+     id='RootPlot'
+     position='200'
+     error='false'
+     numsubpods='1'>
+  <subpod title=''>
+   <img src='https://www4d.wolframalpha.com/Calculate/MSP/MSP129613342a8e712167df000047fb8fggd4ig0f23?MSPStoreType=image/gif&amp;s=24'
+       alt='Root plot'
+       title=''
+       width='330'
+       height='217'
+       type='2DMathPlot_1'
+       themes='1,2,3,4,5,6,7,8,9,10,11,12'
+       colorinvertable='true' />
+   <plaintext></plaintext>
+  </subpod>
+  <expressiontypes count='1'>
+   <expressiontype name='Default' />
+  </expressiontypes>
+ </pod>
+ <pod title='Number line'
+     scanner='Reduce'
+     id='NumberLine'
+     position='300'
+     error='false'
+     numsubpods='1'>
+  <subpod title=''>
+   <img src='https://www4d.wolframalpha.com/Calculate/MSP/MSP129713342a8e712167df000042cdc39f0fdgedi7?MSPStoreType=image/gif&amp;s=24'
+       alt='Number line'
+       title=''
+       width='330'
+       height='60'
+       type='1DMathPlot_1'
+       themes='1,2,3,4,5,6,7,8,9,10,11,12'
+       colorinvertable='true' />
+   <plaintext></plaintext>
+  </subpod>
+  <expressiontypes count='1'>
+   <expressiontype name='1DMathPlot' />
+  </expressiontypes>
+ </pod>
+ <pod title='Solution'
+     scanner='Reduce'
+     id='Solution'
+     position='400'
+     error='false'
+     numsubpods='1'
+     primary='true'>
+  <subpod title=''>
+   <img src='https://www4d.wolframalpha.com/Calculate/MSP/MSP129813342a8e712167df00001g3hi232dh637i2h?MSPStoreType=image/gif&amp;s=24'
+       alt='x = 3'
+       title='x = 3'
+       width='550'
+       height='22'
+       type='Default'
+       themes='1,2,3,4,5,6,7,8,9,10,11,12'
+       colorinvertable='true' />
+   <plaintext>x = 3</plaintext>
+  </subpod>
+  <expressiontypes count='1'>
+   <expressiontype name='Default' />
+  </expressiontypes>
+  <states count='1'>
+   <state name='Step-by-step solution'
+       input='Solution__Step-by-step solution'
+       stepbystep='true' />
+  </states>
+ </pod>
+</queryresult>
