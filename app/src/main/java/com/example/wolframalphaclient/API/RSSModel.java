@@ -7,7 +7,7 @@ import org.simpleframework.xml.Root;
 
 import java.util.List;
 
-@Root(name = "queryresult ", strict = false)
+@Root(name = "queryresult", strict = false)
 public class RSSModel {
 
     @ElementList(name = "pod", inline = true)

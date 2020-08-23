@@ -52,7 +52,11 @@ public class Controller implements Callback<RSSModel> {
     public void onResponse(Call<RSSModel> call, Response<RSSModel> response) {
         if (response.isSuccessful()) {
             RSSModel model = response.body();
-            model.getAnswer().forEach(answer -> expression.add(answer.getExpression() + '\n' + '\n'));
+            model.getAnswer().forEach(answer -> {
+                answer.getExpression().forEach(text -> {
+                    expression.add(text.getText() + '\n' + '\n');
+                });
+            });
         } else {
             expression.add("Invalid request. Try again!");
         }
@@ -62,7 +66,7 @@ public class Controller implements Callback<RSSModel> {
 
     @Override
     public void onFailure(Call<RSSModel> call, Throwable t) {
-        expression.add("Invalid request. Try again!");
+        expression.add("Invalid request. Try again!!!");
         viewModel.setOutputExpression(expression);
         viewModel.setIsLoading(false);
     }
