@@ -57,14 +57,13 @@ public class Controller implements Callback<RSSModel> {
             expression.add("Invalid request. Try again!");
         }
         viewModel.setOutputExpression(expression);
-        for (String i : expression) {
-            Log.d("Answer", i);
-        }
+        viewModel.setIsLoading(false);
     }
 
     @Override
     public void onFailure(Call<RSSModel> call, Throwable t) {
         expression.add("Invalid request. Try again!");
         viewModel.setOutputExpression(expression);
+        viewModel.setIsLoading(false);
     }
 }

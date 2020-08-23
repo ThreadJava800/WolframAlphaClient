@@ -3,6 +3,7 @@ package com.example.wolframalphaclient.views;
 import android.view.View;
 import android.widget.Toast;
 
+import androidx.databinding.ObservableBoolean;
 import androidx.databinding.ObservableField;
 
 import com.example.wolframalphaclient.API.Controller;
@@ -13,6 +14,15 @@ import java.util.ArrayList;
 public class ViewModel {
     private String inputExpression;
     private ObservableField<String> outputExpression = new ObservableField<>();
+    private ObservableBoolean isLoading = new ObservableBoolean();
+
+    public ObservableBoolean getIsLoading() {
+        return isLoading;
+    }
+
+    public void setIsLoading(Boolean isLoading) {
+        this.isLoading.set(isLoading);
+    }
 
     public void setInputExpression(String inputExpression) {
         this.inputExpression = inputExpression;
@@ -36,9 +46,10 @@ public class ViewModel {
         setOutputExpression(result.toString());
     }
 
-    public ViewModel(String inputExpression, String outputExpression) {
+    public ViewModel(String inputExpression, String outputExpression, boolean isLoading) {
         this.inputExpression = inputExpression;
         this.outputExpression.set(outputExpression);
+        this.isLoading.set(isLoading);
     }
 
     public String getInputExpression() {
@@ -49,6 +60,7 @@ public class ViewModel {
         if (inputExpression == null) {
             Toast.makeText(view.getContext(), R.string.enter_expression, Toast.LENGTH_LONG).show();
         } else {
+            setIsLoading(true);
             Controller controller = new Controller(this, inputExpression);
             controller.run();
         }

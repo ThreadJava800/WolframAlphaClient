@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ViewModel viewModel = new ViewModel(null, null);
+        ViewModel viewModel = new ViewModel(null, null, false);
         ActivityMainBinding dataBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         dataBinding.setModel(viewModel);
         ((TextInputLayout) findViewById(R.id.inputLayout)).setEndIconOnClickListener(viewModel::onSearchIconClicked);
