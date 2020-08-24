@@ -36,16 +36,6 @@ public class ViewModel {
         this.outputExpression.set(outputExpression);
     }
 
-    public void setOutputExpression(ArrayList<String> outputExpression) {
-        StringBuilder result = new StringBuilder();
-        for (String i : outputExpression) {
-            if (!i.equals("null" + '\n' + '\n')) {
-                result.append(i);
-            }
-        }
-        setOutputExpression(result.toString());
-    }
-
     public ViewModel(String inputExpression, String outputExpression, boolean isLoading) {
         this.inputExpression = inputExpression;
         this.outputExpression.set(outputExpression);

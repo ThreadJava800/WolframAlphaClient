@@ -22,7 +22,7 @@ import retrofit2.converter.simplexml.SimpleXmlConverterFactory;
 
 public class Controller implements Callback<RSSModel> {
     private String request_url;
-    private ArrayList<String> expression = new ArrayList<>();
+    private StringBuilder expression = new StringBuilder();
     private ViewModel viewModel;
 
     public Controller(ViewModel viewModel, String request_url) {
@@ -34,8 +34,8 @@ public class Controller implements Callback<RSSModel> {
         return request_url;
     }
 
-    public ArrayList<String> getExpression() {
-        return expression;
+    public String getExpression() {
+        return expression.toString();
     }
 
 
@@ -54,20 +54,22 @@ public class Controller implements Callback<RSSModel> {
             RSSModel model = response.body();
             model.getAnswer().forEach(answer -> {
                 answer.getExpression().forEach(text -> {
-                    expression.add(text.getText() + '\n' + '\n');
+                    if (text.getText() != null) {
+                        expression.append(text.getText()).append('\n').append('\n');
+                    }
                 });
             });
         } else {
-            expression.add("Invalid request. Try again!");
+            expression.append("Invalid request. Try again!");
         }
-        viewModel.setOutputExpression(expression);
+        viewModel.setOutputExpression(expression.toString());
         viewModel.setIsLoading(false);
     }
 
     @Override
     public void onFailure(Call<RSSModel> call, Throwable t) {
-        expression.add("Invalid request. Try again!!!");
-        viewModel.setOutputExpression(expression);
+        expression.append("Invalid request. Try again!");
+        viewModel.setOutputExpression(expression.toString());
         viewModel.setIsLoading(false);
     }
 }
